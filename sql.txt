@@ -1,0 +1,22 @@
+CREATE TABLE Lop (
+    lopid INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    tenlop VARCHAR(50) NOT NULL
+);
+ 
+CREATE TABLE SinhVien(
+    masv VARCHAR(50) NOT NULL PRIMARY KEY,
+    hoten VARCHAR(50) NOT NULL ,
+    ngaysinh Date NOT NULL ,
+    lopid INT(11),
+    FOREIGN KEY (lopid) REFERENCES Lop(lopid)
+);
+
+INSERT INTO `lop` (`lopid`, `tenlop`) VALUES (NULL, 'CNTTK11A');
+INSERT INTO `lop` (`lopid`, `tenlop`) VALUES (NULL, 'CNTTK11B');
+INSERT INTO `lop` (`lopid`, `tenlop`) VALUES (NULL, 'CNTTK11C');
+INSERT INTO `lop` (`lopid`, `tenlop`) VALUES (NULL, 'KTPMK11A');
+
+INSERT INTO `sinhvien` (`masv`, `hoten`, `ngaysinh`, `lopid`) VALUES ('DTC125D4802010079', 'Vũ Ngọc Hà', '1994-10-10', '1');
+INSERT INTO `sinhvien` (`masv`, `hoten`, `ngaysinh`) VALUES ('DTC125D4802010080', 'Phan Thu Hằng', '1994-10-15');
+INSERT INTO `sinhvien` (`masv`, `hoten`, `ngaysinh` ) VALUES ('DTC125D4802010081', 'Nguyễn Thị Hảo', '1994-10-28' );
+INSERT INTO `sinhvien` (`masv`, `hoten`, `ngaysinh` ) VALUES ('DTC125D4802010082', 'Bùi Văn Giáp', '1994-4-15' );
